@@ -21,7 +21,7 @@ sprite_image = pygame.transform.scale(sprite_image, (int(0.1*sprite_rect.width),
 sprite_rect = sprite_image.get_rect()
 sprite_rect.center = (width // 2, height // 2)
 
-speed = pygame.math.Vector2(0, 10)
+speed = pygame.math.Vector2(0, 9)
 rotation = random.randint(0, 360)
 speed.rotate_ip(rotation)
 
