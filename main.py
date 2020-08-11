@@ -25,11 +25,18 @@ speed = pygame.math.Vector2(0, 10)
 rotation = random.randint(0, 360)
 speed.rotate_ip(rotation)
 
+def moveSprite():
+	sprite_rect.move_ip(speed)
+	if sprite_rect.right > width or sprite_rect.left < 0:
+		speed[0] *= -1
+	if sprite_rect.top < 0 or sprite_rect.bottom > height:
+		speed[1] *= -1
+
 
 def main():
 	while True:
 		clock.tick(60)
-		sprite_rect.move_ip(speed)
+		moveSprite()
 		screen.fill(background_color)
 		screen.blit(sprite_image, sprite_rect)
 		pygame.display.flip()
